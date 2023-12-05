@@ -3,7 +3,7 @@ def solve(lines):
 
 if __name__ == '__main__':
     lines = []
-    with open('£.txt') as f:
+    with open('19.txt') as f:
         for line in f.readlines():
             lines.append(line.strip())
     print(solve(lines))

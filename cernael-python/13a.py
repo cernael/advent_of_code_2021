@@ -15,22 +15,19 @@ def solve(lines):
 
     dir,line = folds[0]
 
+    adds, removes = set(), set()
     if dir == 'x':
-        adds, removes = set(), set()
         for d in dots:
             if d[0] > line:
                 removes.add(d)
                 adds.add((line*2 - d[0], d[1]))
-        dots |= adds
-        dots -= removes
     elif dir == 'y':
-        adds, removes = set(), set()
         for d in dots:
             if d[1] > line:
                 removes.add(d)
                 adds.add((d[0], line*2 - d[1]))
-        dots |= adds
-        dots -= removes
+    dots |= adds
+    dots -= removes
 
     return len(dots)
 
